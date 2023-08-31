@@ -6,10 +6,12 @@ from time import sleep
 
 driver = webdriver.Chrome()
 driver.get("http://www.google.com")
+print(driver.title)
 element = driver.find_element(By.XPATH, '//*[@name="q"]')
 time.sleep(2)
 element.clear()
 element.send_keys("ChromeDriver")
+#simulates pressing the "Enter" key, which triggers the search action.
 element.send_keys(Keys.RETURN)
 time.sleep(5)
 
